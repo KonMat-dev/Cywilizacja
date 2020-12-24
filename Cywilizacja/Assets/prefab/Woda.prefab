@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 1153112844296322058}
   - component: {fileID: 8370584457208805929}
   - component: {fileID: 8913698297778186928}
-  - component: {fileID: 2616357455887063788}
+  - component: {fileID: 7267348989168965685}
   m_Layer: 5
   m_Name: Woda
   m_TagString: Untagged
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 1
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2616357455887063788
+--- !u!114 &7267348989168965685
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -315,7 +315,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7607821680532424706}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a89c68cfd252df4c927b03c266b75c6, type: 3}
+  m_Script: {fileID: 11500000, guid: b54038da0822cdb4a93e111de7d6f8e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8165875891805639386

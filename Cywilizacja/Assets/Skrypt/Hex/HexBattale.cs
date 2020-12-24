@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum HexState { inactive, active };
+
 public class HexBattale : MonoBehaviour
 {
-    FieldMenager fieldMenager = new FieldMenager();
+    public int horizonalCoordinate;
+    public int verticalCoordinate;
+
+    public HexState battaleState;
+
     void Start()
     {
         

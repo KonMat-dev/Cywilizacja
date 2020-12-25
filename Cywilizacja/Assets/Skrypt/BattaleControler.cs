@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class BattaleControler : MonoBehaviour
 {
-    FieldMenager fieldMenager = new FieldMenager();
-    [SerializeField] int testInt;
+  
 
 
     // Start is called before the first frame update

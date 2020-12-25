@@ -17,7 +17,11 @@ public class FieldMenager : MonoBehaviour
             {
             allRows[i].allHexesInRow = allRows[i].GetComponentsInChildren<HexBattale>();
             }
+        
         CreateAllHexesArray();
+
+        CrateActiveHexesArray();
+
     }
 
     private void CreateAllHexesArray() 
@@ -37,5 +41,21 @@ public class FieldMenager : MonoBehaviour
             }
         }
 
+    private void CrateActiveHexesArray()
+    {
+        foreach (HexBattale hex in allHexesArray)
+        {
+            if (Mathf.Abs(hex.transform.position.x) > 15.3f |
+                Mathf.Abs(hex.transform.position.y) > 5.2f)
+            {
+                hex.MakeMeInactive();
+            }
+            else
+            {
+                hex.MakeMeActive();
+            }
+        }
+
+    }
 
 }

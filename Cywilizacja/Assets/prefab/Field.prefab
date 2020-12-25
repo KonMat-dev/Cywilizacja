@@ -320,6 +320,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizonalCoordinate: 0
   verticalCoordinate: 0
+  Landscape: {fileID: 4025151105606454933}
+  battaleState: 0
 --- !u!1 &8165875891805639386
 GameObject:
   m_ObjectHideFlags: 0

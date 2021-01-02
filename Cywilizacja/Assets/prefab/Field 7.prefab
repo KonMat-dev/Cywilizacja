@@ -239,8 +239,9 @@ GameObject:
   - component: {fileID: 8370584457208805929}
   - component: {fileID: 8913698297778186928}
   - component: {fileID: 2616357455887063788}
+  - component: {fileID: -4948714713419260605}
   m_Layer: 5
-  m_Name: Field
+  m_Name: Field 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -316,6 +317,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a89c68cfd252df4c927b03c266b75c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizonalCoordinate: 0
+  verticalCoordinate: 0
+  Landscape: {fileID: 0}
+  isStrtingHex: 0
+  currentState: {fileID: 0}
+  isNeighboringHex: 0
+  isIncluded: 0
+  battaleState: 0
+--- !u!114 &-4948714713419260605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7607821680532424706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f784c576cdda0f479c035150589f029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8165875891805639386

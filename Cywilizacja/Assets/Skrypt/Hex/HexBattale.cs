@@ -10,8 +10,17 @@ public class HexBattale : MonoBehaviour
     public int horizonalCoordinate;
     public int verticalCoordinate;
     public Image Landscape;
-
+    public bool isStrtingHex = false;
+    [SerializeField] protected Image currentState;
+    public bool isNeighboringHex = false;
+    public bool isIncluded = false;
     public HexState battaleState;
+    public ClickOnMe clickOnMe;
+
+    private void Awake()
+    {
+        clickOnMe = GetComponent<ClickOnMe>();
+    }
 
     void Start()
     {
@@ -30,7 +39,29 @@ public class HexBattale : MonoBehaviour
     public void MakeMeInactive() {
         if (battaleState != HexState.active) 
         {
+
             Landscape.color = new Color32(170, 170, 170, 255);
         }
     }
+
+    public virtual void MakeMeAviable()
+    {
+
+        currentState.sprite = clickOnMe.fieldManager.availableToMove;
+        currentState.color = new Color32(255, 255, 255, 255);
+        
+    }
+    public virtual void MakeMeTargetToMove()//defines a hex as selected position
+    {
+        clickOnMe.isTargetHex = true;
+        currentState.sprite = clickOnMe.fieldManager.availableAsTarget;//sets the green frame to a hex
+    }
+
+    public virtual void MakeMeTargetToMoveNot()//defines a hex as selected position
+    {
+        clickOnMe.isTargetHex = false;
+        currentState.sprite = clickOnMe.fieldManager.availableToMove;
+        currentState.color = new Color32(255, 255, 255, 255);
+    }
+
 }

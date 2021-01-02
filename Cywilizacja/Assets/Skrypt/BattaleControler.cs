@@ -18,4 +18,9 @@ public class BattaleControler : MonoBehaviour
     {
         
     }
+
+    private void Awake()
+    {
+        
+    }
 }

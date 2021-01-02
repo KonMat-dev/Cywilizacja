@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class woda : HexBattale
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void MakeMeTargetToMove()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+         clickOnMe.ClearPreviousSelectionOfTargetHex();
+
+    }
+    public override void MakeMeAviable()
     {
-        
+        currentState.color = new Color32(255, 255, 255, 0);
     }
 }

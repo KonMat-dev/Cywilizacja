@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class BattaleControler : MonoBehaviour
 {
-  
-
-
-    // Start is called before the first frame update
+    public static HexBattale targetToMove;
+    public static Hero currentAtacker;
     void Start()
     {
-       
+        currentAtacker = FindObjectOfType<Hero>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
-    }
 
+    }
     private void Awake()
     {
-        
+
     }
 }

@@ -5,6 +5,9 @@ TextureImporter:
   - first:
       213: -4461209570255401748
     second: grass_1lvl_1.25_0
+  - first:
+      213: 3341242585884056509
+    second: grass_1lvl_1.25_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -26,6 +29,7 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -60,6 +64,7 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -140,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cec8a5848899612c0800000000000000
-      internalID: -4461209570255401748
+      spriteID: dbbd600ed6a7e5e20800000000000000
+      internalID: 3341242585884056509
       vertices: []
       indices: 
       edges: []

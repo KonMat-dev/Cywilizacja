@@ -9,9 +9,10 @@ public class FieldMenager : MonoBehaviour
     int allRowsLenght;
      public static List<HexBattale> activeHexList = new List<HexBattale>();
 
-    public Sprite availableAsTarget; //green frame
-    public Sprite notAavailable; //enemy, red frame
-    public Sprite availableToMove; //white frame
+    public Sprite availableAsTarget; 
+    public Sprite notAavailable; 
+    public Sprite availableToMove; 
+
 
     // Start is called before the first frame update
     void Awake()
@@ -24,6 +25,7 @@ public class FieldMenager : MonoBehaviour
         }
         CreateAllHexesArray();
         IdentifyHexes();
+        CreateActiveHexList();
     }
 
     private void CreateAllHexesArray() 
@@ -49,8 +51,8 @@ public class FieldMenager : MonoBehaviour
     {
         foreach (HexBattale hex in allHexesArray)
         {
-            if (Mathf.Abs(hex.transform.position.x) > 15.3f |
-                Mathf.Abs(hex.transform.position.y) > 5.2f)
+            if ((hex.transform.position.x > 15.2f || hex.transform.position.x < -25.2f) |
+                Mathf.Abs(hex.transform.position.y) > 9.5f)
             {
                 hex.MakeMeInactive();
             }
@@ -62,7 +64,7 @@ public class FieldMenager : MonoBehaviour
 
     }
 
-    //create list filled with active hess
+    
     private void CreateActiveHexList() 
         {
         foreach (HexBattale hex in allHexesArray)
@@ -82,8 +84,8 @@ public class FieldMenager : MonoBehaviour
         IdentifyHexes();
         AviablePosition hero = FindObjectOfType<AviablePosition>();
         IAdjacentFinder adjacentFinder = new PositionsForFlying();
-        
-
-        hero.GetAvailablePositions(hero.GetComponentInParent<HexBattale>(), 2, adjacentFinder);
+        HexBattale startingHex = hero.GetComponentInParent<HexBattale>();
+        startingHex.DefineMeAsStartingHex();
+        hero.GetAvailablePositions(hero.GetComponentInParent<HexBattale>(), 4, adjacentFinder);
     }
 }

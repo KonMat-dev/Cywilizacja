@@ -1,60 +1,63 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class move : MonoBehaviour
 {
-
-    [SerializeField]
-    [Range(2,12)]
-    public float speed;
-
-    private Vector3 targetPosition;
-    private bool isMoving = false;
+    public bool isMoving = false;
+    Hero hero;
+    public List<Image> path;
+    private int totalSteps;
+    private int currentStep;
+    Vector3 targetPos;
+    float speedOfAnim = 2f;
     void Start()
     {
-
+        hero = GetComponent<Hero>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetMouseButton(0)) 
-        {
-            SetTargetPosition();
-        }
         if (isMoving)
+            HeroIsMoving();
+    }
+    public void StartsMoving()
+    {
+        currentStep = 0;
+        totalSteps = path.Count - 1;
+        isMoving = true;
+        ResetTargetPos();
+    }
+    private void ResetTargetPos()
+    {
+        targetPos = new Vector3(path[currentStep].transform.position.x ,
+      path[currentStep].transform.position.y ,
+      transform.position.z);
+    }
+    private void HeroIsMoving()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, targetPos,
+                        speedOfAnim * Time.deltaTime);
+        ManageSteps();
+    }
+    private void ManageSteps()
+    {
+        if (Vector3.Distance(transform.position, targetPos) < 0.1f
+      && currentStep < totalSteps)
         {
-            Move();
-            if (isMoving == true)
-            {
-                Cursor.visible = false;
-
-            }
-            else
-            {
-
-                Cursor.visible = true;
-            }
+            currentStep++;
+            ResetTargetPos();
+        }
+        else if (Vector3.Distance(transform.position, targetPos) < 0.1f)
+        {
+            StopsMoving();
         }
     }
-
-    void SetTargetPosition() 
+    private void StopsMoving()
     {
-        targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        targetPosition.z = transform.position.z;
-            isMoving = true;
-      
-    }
-
-    public void Move()
-    {
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-        if (transform.position == targetPosition) 
-        {
-            isMoving = false;
-        }
+        isMoving = !isMoving;
         
     }
 

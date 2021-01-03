@@ -16,6 +16,8 @@ public class HexBattale : MonoBehaviour
     public bool isIncluded = false;
     public HexState battaleState;
     public ClickOnMe clickOnMe;
+    public Distance distanceText;
+    public DeploymentPos deploymentPos;
 
     private void Awake()
     {
@@ -51,17 +53,17 @@ public class HexBattale : MonoBehaviour
         currentState.color = new Color32(255, 255, 255, 255);
         
     }
-    public virtual void MakeMeTargetToMove()//defines a hex as selected position
+    public virtual void MakeMeTargetToMove()
     {
-        clickOnMe.isTargetHex = true;
-        currentState.sprite = clickOnMe.fieldManager.availableAsTarget;//sets the green frame to a hex
+        clickOnMe.isTargetToMove = true;
+        BattaleControler.targetToMove = this;
+        currentState.sprite = clickOnMe.fieldManager.availableAsTarget;
+
     }
 
-    public virtual void MakeMeTargetToMoveNot()//defines a hex as selected position
+    public void DefineMeAsStartingHex()
     {
-        clickOnMe.isTargetHex = false;
-        currentState.sprite = clickOnMe.fieldManager.availableToMove;
-        currentState.color = new Color32(255, 255, 255, 255);
+        isStrtingHex = true;
+        distanceText.stepsToGo = 1;
     }
-
 }

@@ -4,16 +4,31 @@ using UnityEngine;
 
 public class Hero : MonoBehaviour
 {
-    public int velocity = 2 ;
+    public int velocity = 4 ;
+    public int health = 50;
 
-    void Start()
+    public int Health
     {
-        
+        get => health;
+        private set { health = value; }
     }
 
-    // Update is called once per frame
-    void Update()
+
+        void Start()
     {
-        
+        print(health);
+        health = 34;
+        print(health);
+
     }
+    public int GetHealth()
+    {
+        return health;
+    }
+    public void SetHealth(int newHealth)
+    {
+        health = newHealth;
+    }
+
 }
+

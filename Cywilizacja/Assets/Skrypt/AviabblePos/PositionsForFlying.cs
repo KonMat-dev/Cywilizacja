@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PositionsForFlying : MonoBehaviour, IAdjacentFinder
 {
+    IEvaluateHex chcekHex = new IfItsNewHex();
     public void GetAdjacentHexesExtended(HexBattale initialHex)
     {
-        List<HexBattale> neighboursToCheck = NeighboursFinder.GetAdjacentHexes(initialHex);
+        List<HexBattale> neighboursToCheck = NeighboursFinder.GetAdjacentHexes(initialHex, chcekHex);
         foreach (HexBattale hex in neighboursToCheck)
         {
-            hex.isNeighboringHex = true;//defines the hex as adjacent to evaluted initial hex
-            print("I implement interface, Ground Regiments");
+            hex.isNeighboringHex = true;
+            hex.distanceText.SetDistanceFromStartingHex(initialHex);
+            hex.MakeMeAviable();
         }
     }
 }

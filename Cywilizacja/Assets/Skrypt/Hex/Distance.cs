@@ -36,4 +36,15 @@ public class Distance : MonoBehaviour
         hex.Landscape.color = new Color32(150, 150, 150, 255);
         return stepsToGo;
     }
+
+    public bool EvaluateDistanceForGround(HexBattale initialHex)
+    {
+        //distance to reach initial hex and get out of it
+        int currentDistance = initialHex.distanceText.distanceFromStartingPoint
+                              + initialHex.distanceText.stepsToGo;
+        int stepsLimit = BattaleControler.currentAtacker.velocity;//velocity of a hero
+        //default value of distanceFromStartingPoint is 20 to set the shortest path
+        return distanceFromStartingPoint > currentDistance &&
+                stepsLimit >= currentDistance;//to evaluate if the velocity is enough to reach this hex
+    }
 }

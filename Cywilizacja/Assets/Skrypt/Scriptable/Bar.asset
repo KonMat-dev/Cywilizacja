@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8dd46315856b7345b4c184db327c321, type: 3}
+  m_Name: Bar
+  m_EditorClassIdentifier: 
+  heroesOfPlayer:
+  - {fileID: 11400000, guid: b52789164f5d42540abece6c38133bcd, type: 2}
+  - {fileID: 11400000, guid: 2e836be42cde76443bc154e7c808a707, type: 2}
+  - {fileID: 11400000, guid: ddda8a0b59472a243b60dfdd4d215fb7, type: 2}
+  enemies: []

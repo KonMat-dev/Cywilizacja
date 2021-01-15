@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class ClickOnMe : MonoBehaviour, IPointerClickHandler
 {
@@ -46,6 +47,8 @@ public class ClickOnMe : MonoBehaviour, IPointerClickHandler
                 hex.GetComponent<ClickOnMe>().isTargetToMove = false;
                 hex.MakeMeAviable();
             }
+            hex.Landscape.color = new Color32(250, 250, 250, 250);
         }
+
     }
     }

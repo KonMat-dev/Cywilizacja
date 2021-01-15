@@ -51,7 +51,7 @@ public class FieldMenager : MonoBehaviour
     {
         foreach (HexBattale hex in allHexesArray)
         {
-            if ((hex.transform.position.x > 15.2f || hex.transform.position.x < -25.2f) |
+            if ((hex.transform.position.x > 15.2f || hex.transform.position.x < -30.2f) |
                 Mathf.Abs(hex.transform.position.y) > 9.5f)
             {
                 hex.MakeMeInactive();
@@ -82,10 +82,11 @@ public class FieldMenager : MonoBehaviour
      
 
         IdentifyHexes();
-        AviablePosition hero = FindObjectOfType<AviablePosition>();
-        IAdjacentFinder adjacentFinder = new PositionsForFlying();
-        HexBattale startingHex = hero.GetComponentInParent<HexBattale>();
-        startingHex.DefineMeAsStartingHex();
-        hero.GetAvailablePositions(hero.GetComponentInParent<HexBattale>(), 4, adjacentFinder);
+       // AviablePosition hero = FindObjectOfType<AviablePosition>();
+       // IAdjacentFinder adjacentFinder = new PositionsForGround();
+       // HexBattale startingHex = hero.GetComponentInParent<HexBattale>();
+       //int stepsLimit = BattaleControler.currentAtacker.velocity;
+       // startingHex.DefineMeAsStartingHex();
+       // hero.GetAvailablePositions(hero.GetComponentInParent<HexBattale>(), stepsLimit, adjacentFinder);
     }
 }

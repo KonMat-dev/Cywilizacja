@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PositionsForFlying : MonoBehaviour, IAdjacentFinder
 {
-    IEvaluateHex chcekHex = new IfItsNewHex();
+    IEvaluateHex chcekHex = new IfItsNewHexFlying();
     public void GetAdjacentHexesExtended(HexBattale initialHex)
     {
         List<HexBattale> neighboursToCheck = NeighboursFinder.GetAdjacentHexes(initialHex, chcekHex);

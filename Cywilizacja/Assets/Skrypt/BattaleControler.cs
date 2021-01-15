@@ -6,18 +6,15 @@ public class BattaleControler : MonoBehaviour
 {
     public static HexBattale targetToMove;
     public static Hero currentAtacker;
-    void Start()
+    void Awake()
     {
         currentAtacker = FindObjectOfType<Hero>();
     }
 
 
-    void Update()
+    void Start()
     {
 
     }
-    private void Awake()
-    {
 
-    }
 }

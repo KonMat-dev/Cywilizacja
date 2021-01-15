@@ -13,9 +13,13 @@ public class move : MonoBehaviour
     private int currentStep;
     Vector3 targetPos;
     float speedOfAnim = 2f;
+    internal bool lookingToTheRight = true;//determines the rotation of the hero
+    SpriteRenderer heroSprite;//SpriteRenderer component reference
+
     void Start()
     {
         hero = GetComponent<Hero>();
+        heroSprite = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -32,9 +36,10 @@ public class move : MonoBehaviour
     }
     private void ResetTargetPos()
     {
-        targetPos = new Vector3(path[currentStep].transform.position.x ,
-      path[currentStep].transform.position.y ,
+        targetPos = new Vector3(path[currentStep].transform.position.x,
+      path[currentStep].transform.position.y,
       transform.position.z);
+        ControlDirection(targetPos);
     }
     private void HeroIsMoving()
     {
@@ -58,7 +63,16 @@ public class move : MonoBehaviour
     private void StopsMoving()
     {
         isMoving = !isMoving;
-        
-    }
 
+    }
+    internal void ControlDirection(Vector3 targetPos)
+    {
+
+        if (transform.position.x > targetPos.x && lookingToTheRight ||
+            transform.position.x < targetPos.x && !lookingToTheRight)
+        {
+            heroSprite.flipX = !heroSprite.flipX;
+            lookingToTheRight = !lookingToTheRight;
+        }
+    }
 }

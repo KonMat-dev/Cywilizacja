@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class PositionsForGround : MonoBehaviour, IAdjacentFinder
 {
-    IEvaluateHex chcekHex = new IfItsNewHex();
+    IEvaluateHex chcekHex = new IfItIsNewGround();
     public void GetAdjacentHexesExtended(HexBattale initialHex)
     {
         List<HexBattale> neighboursToCheck = NeighboursFinder.GetAdjacentHexes(initialHex, chcekHex);
         foreach (HexBattale hex in neighboursToCheck)
         {
-            hex.isNeighboringHex = true;
-            hex.distanceText.SetDistanceFromStartingHex(initialHex);
-            hex.MakeMeAviable();
+            if (hex.distanceText.EvaluateDistanceForGround(initialHex)) {
+                hex.isNeighboringHex = true;
+                hex.distanceText.SetDistanceFromStartingHex(initialHex);
+                hex.MakeMeAviable();
+
+            }
         }
     }
 }

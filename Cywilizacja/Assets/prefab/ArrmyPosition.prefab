@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8290189806740843634}
   - component: {fileID: 3139888573865731288}
   - component: {fileID: 8074834294692037198}
+  - component: {fileID: 7955981941059101902}
   m_Layer: 5
   m_Name: ArrmyPosition
   m_TagString: Untagged
@@ -61,7 +62,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -88,3 +88,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 473950ab9d528c649931fa0a3c4999a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!60 &7955981941059101902
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3705663945158158848}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 39.875732, y: -7.951721}
+      - {x: 29.391846, y: 17.619629}
+      - {x: -10.4453125, y: 22.552612}
+      - {x: -23.46595, y: 15.228512}
+      - {x: -39.921036, y: 4.887516}
+      - {x: -29.251204, y: -17.898647}
+      - {x: 10.716559, y: -24.37595}

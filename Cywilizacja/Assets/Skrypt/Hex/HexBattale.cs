@@ -63,7 +63,23 @@ public class HexBattale : MonoBehaviour
 
     public void DefineMeAsStartingHex()
     {
+        distanceText.distanceFromStartingPoint = 0;
         isStrtingHex = true;
         distanceText.stepsToGo = 1;
+    }
+
+    public virtual bool AvailableToGround()
+    {
+        return true;
+    }
+    public void MakeMeDeploymentPosition()//displays the hex as a potential position for the hero
+    {
+        deploymentPos.GetComponent<PolygonCollider2D>().enabled = true;//enables collider (and clicking)
+        deploymentPos.GetComponent<Image>().color = new Color32(255, 255, 255, 255);//displays a checkmark
+    }
+    public void CleanUpDeploymentPosition()//hides a checkmark, disables collider
+    {
+        deploymentPos.GetComponent<PolygonCollider2D>().enabled = false;// disables collider(and clicking)
+        deploymentPos.GetComponent<Image>().color = new Color32(255, 255, 255, 0);//hides a checkmark
     }
 }

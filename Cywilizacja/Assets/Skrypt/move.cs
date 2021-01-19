@@ -15,11 +15,13 @@ public class move : MonoBehaviour
     float speedOfAnim = 2f;
     internal bool lookingToTheRight = true;//determines the rotation of the hero
     SpriteRenderer heroSprite;//SpriteRenderer component reference
+    BattaleControler battaleControler;
 
     void Start()
     {
         hero = GetComponent<Hero>();
         heroSprite = GetComponent<SpriteRenderer>();
+        battaleControler = FindObjectOfType<BattaleControler>();
     }
 
     void Update()
@@ -29,10 +31,14 @@ public class move : MonoBehaviour
     }
     public void StartsMoving()
     {
-        currentStep = 0;
-        totalSteps = path.Count - 1;
-        isMoving = true;
-        ResetTargetPos();
+        battaleControler.CleanField();
+        if (!(hero.getAlreadyMoved())) {
+            hero.setAlreadyMoved(true);
+            currentStep = 0;
+            totalSteps = path.Count - 1;
+            isMoving = true;
+            ResetTargetPos();
+        }
     }
     private void ResetTargetPos()
     {

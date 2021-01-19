@@ -5,12 +5,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int ID;
-    public STorageMNG storages;
     public int wealth;
 
     public Player(int _ID)
     {
-        storages = new STorageMNG();
         wealth = 100;
     }
 

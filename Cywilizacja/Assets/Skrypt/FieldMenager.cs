@@ -79,14 +79,6 @@ public class FieldMenager : MonoBehaviour
 
     private void Start()
     {
-     
-
-        IdentifyHexes();
-       // AviablePosition hero = FindObjectOfType<AviablePosition>();
-       // IAdjacentFinder adjacentFinder = new PositionsForGround();
-       // HexBattale startingHex = hero.GetComponentInParent<HexBattale>();
-       //int stepsLimit = BattaleControler.currentAtacker.velocity;
-       // startingHex.DefineMeAsStartingHex();
-       // hero.GetAvailablePositions(hero.GetComponentInParent<HexBattale>(), stepsLimit, adjacentFinder);
+       IdentifyHexes();
     }
 }

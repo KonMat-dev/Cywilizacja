@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 4838076441269282814}
   - component: {fileID: 4838076441269282815}
   - component: {fileID: 6363436588726842252}
+  - component: {fileID: -8844197131774163733}
+  - component: {fileID: 6832009207867021890}
   m_Layer: 0
   m_Name: Arrmy1 2
   m_TagString: Untagged
@@ -139,6 +141,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: 5
   heroData: {fileID: 11400000, guid: 2e836be42cde76443bc154e7c808a707, type: 2}
+  battaleControler: {fileID: 0}
+  targetedForMovement: 0
+  _velocity: 0
+  _hp: 0
+  _atack: 0
+  _resistance: 0
+  _stack: 0
+  _heroSprite: {fileID: 0}
+  _heroSO: {fileID: 0}
+  _ownerID: 0
+  _targetedForMovement: 0
+--- !u!65 &-8844197131774163733
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4838076441269282809}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.4099994, y: 10.799999, z: 0.2}
+  m_Center: {x: 0, y: 5.3999996, z: 0}
+--- !u!114 &6832009207867021890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4838076441269282809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf1738c4d2ee6054c803ea38dc0ebd4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hero: {fileID: 0}
 --- !u!1001 &5708992328577503359
 PrefabInstance:
   m_ObjectHideFlags: 0

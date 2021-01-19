@@ -22,10 +22,10 @@ public class OnClickCatle : MonoBehaviour
             {
                 Panel.SetActive(true);
             }
-            else if (gameObject.name.Equals("Close"))
-            {
-                Panel.SetActive(false);
-            }
+        }
+        if (gameObject.name.Equals("Close"))
+        {
+            Panel.SetActive(false);
         }
     }
 }

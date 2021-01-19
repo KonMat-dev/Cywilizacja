@@ -82,4 +82,13 @@ public class HexBattale : MonoBehaviour
         deploymentPos.GetComponent<PolygonCollider2D>().enabled = false;// disables collider(and clicking)
         deploymentPos.GetComponent<Image>().color = new Color32(255, 255, 255, 0);//hides a checkmark
     }
+    
+    public void SetDefaultValue()
+    {
+        isStrtingHex = false;
+        isNeighboringHex = false;
+        distanceText.GetComponent<Text>().color = new Color32(255, 255, 255, 0);
+        currentState.color = new Color32(255, 255, 255, 0);
+        Landscape.color = new Color32(255, 255, 255, 255);
+    }
 }

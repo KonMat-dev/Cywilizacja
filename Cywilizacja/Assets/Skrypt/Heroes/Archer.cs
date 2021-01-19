@@ -8,4 +8,13 @@ public class Archer : Hero
     {
 
     }
+
+    public override IAdjacentFinder GetTypeOfHero()
+    {
+        PositionsForGround adjFinder = new PositionsForGround();
+        return adjFinder;
+    }
+
+    
+
 }

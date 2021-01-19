@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IfItIsNewGround : MonoBehaviour, IEvaluateHex
 {
+    public static IfItIsNewGround Instance;
     public bool EvaluateHex(HexBattale evaluatedHex)
     {
         return evaluatedHex.battaleState

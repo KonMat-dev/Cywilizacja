@@ -24,12 +24,15 @@ public class PlayerController : MonoBehaviour
         Instance.players[Instance.IDOfAnActivePlayer].addWealth(100);
         Debug.Log("players[ " + Instance.IDOfAnActivePlayer + " ].wealth = " + Instance.players[Instance.IDOfAnActivePlayer].wealth);
         Instance.IDOfAnActivePlayer++;
-        if(Instance.IDOfAnActivePlayer >= Instance.numberOfPlayers)
+        GetComponent<BattaleControler>().MakeFightersViableAgain();
+        if (Instance.IDOfAnActivePlayer >= Instance.numberOfPlayers)
         {
             Instance.IDOfAnActivePlayer = 0;
         }
         Debug.Log("Id of an active player = " + Instance.IDOfAnActivePlayer);
     }
+
+
 
     private void Awake()
     {

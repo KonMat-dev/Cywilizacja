@@ -13,8 +13,12 @@ public class Deployer : MonoBehaviour
     public static void DeployRegiment(HexBattale parentObject)//hero appears on parentObject
     {
         Hero regiment = readyForDeploymentIcon.charAttributes.heroSO;// gets the hero prefab
-        Hero fighter = Instantiate(regiment, parentObject.Landscape.transform);//instantiates the hero and
+        regiment.setHeroData(new CharAttributes(0, (int) Random.Range(0.0f,100.0f)+50, (int)Random.Range(0.0f, 100.0f) + 50, 0, 0, readyForDeploymentIcon.charAttributes.heroSprite, readyForDeploymentIcon.charAttributes.heroSO, 0));
+        regiment.setOwnerID(PlayerController.Instance.IDOfAnActivePlayer);
+        //GameObject hero = 
+        Instantiate(regiment, parentObject.Landscape.transform);//instantiates the hero and
         //returns a hero object
+       // hero.AddComponent<BoxCollider>(); tu coś pisałeś makaron 
         parentObject.CleanUpDeploymentPosition();//hides the checkmark and disables the collider
         readyForDeploymentIcon.HeroIsDeployed();//marks the icon in gray
         readyForDeploymentIcon = null;//clears a variable to prevent the hero from reappearing

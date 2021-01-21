@@ -5,9 +5,9 @@ using UnityEngine;
 public class FieldMenager : MonoBehaviour
 {
     public RowManager[] allRows;
-   public static  HexBattale[,] allHexesArray;  // przechowuje wszystkie hexy na planszy 
+    public static  HexBattale[,] allHexesArray;  // przechowuje wszystkie hexy na planszy 
     int allRowsLenght;
-     public static List<HexBattale> activeHexList = new List<HexBattale>();
+    public static List<HexBattale> activeHexList = new List<HexBattale>();
 
     public Sprite availableAsTarget; 
     public Sprite notAavailable; 

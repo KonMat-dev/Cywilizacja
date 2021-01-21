@@ -11,10 +11,20 @@ public class DeploymentPos : MonoBehaviour
     {
         HexBattale parentHex = GetComponentInParent<HexBattale>();//finds the parent hex
         //checks if the player clicked on the hex and if it is a potencial position
-        if (Deployer.readyForDeploymentIcon != null && regimentPosition == PositionForRegiment.player)
+        if (Deployer.readyForDeploymentIcon != null && regimentPosition == PositionForRegiment.player && !parentHex.GetComponentInChildren<Hero>())
         {
             Deployer.DeployRegiment(parentHex);//deploys a regiment
         }
+    }
 
+    public void setRegimentPositionToPlayer()
+    {
+        regimentPosition = PositionForRegiment.player;
+    }
+
+    public void setRegimentPositionToNone()
+    {
+        regimentPosition = PositionForRegiment.none;
     }
 }
+ 

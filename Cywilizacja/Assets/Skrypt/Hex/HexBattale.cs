@@ -18,6 +18,9 @@ public class HexBattale : MonoBehaviour
     public ClickOnMe clickOnMe;
     public Distance distanceText;
     public DeploymentPos deploymentPos;
+    public bool potentialTarget;
+    public int stepsToGoCurrent;
+    public bool lookingForTarget;//helps identify potential targets 
 
     private void Awake()
     {
@@ -41,24 +44,27 @@ public class HexBattale : MonoBehaviour
     public void MakeMeInactive() {
         if (battaleState != HexState.active) 
         {
-
             Landscape.color = new Color32(170, 170, 170, 255);
         }
     }
 
     public virtual void MakeMeAviable()
     {
-
         currentState.sprite = clickOnMe.fieldManager.availableToMove;
         currentState.color = new Color32(255, 255, 255, 255);
-        
     }
+
     public virtual void MakeMeTargetToMove()
     {
         clickOnMe.isTargetToMove = true;
         BattaleControler.targetToMove = this;
         currentState.sprite = clickOnMe.fieldManager.availableAsTarget;
-
+    }
+    public virtual void DisableMeAsTargetToMove()
+    {
+        clickOnMe.isTargetToMove = false;
+        BattaleControler.targetToMove = null;
+        currentState.sprite = clickOnMe.fieldManager.availableAsTarget;
     }
 
     public void DefineMeAsStartingHex()
@@ -66,6 +72,12 @@ public class HexBattale : MonoBehaviour
         distanceText.distanceFromStartingPoint = 0;
         isStrtingHex = true;
         distanceText.stepsToGo = 1;
+    }
+
+    internal  void DefineMeAsPotentialHex()
+    {
+        currentState.color = new Color(255, 0, 0, 255);
+        potentialTarget = true;
     }
 
     public virtual bool AvailableToGround()
@@ -87,8 +99,13 @@ public class HexBattale : MonoBehaviour
     {
         isStrtingHex = false;
         isNeighboringHex = false;
+        isIncluded = false;        
+        battaleState = HexState.active;
         distanceText.GetComponent<Text>().color = new Color32(255, 255, 255, 0);
         currentState.color = new Color32(255, 255, 255, 0);
         Landscape.color = new Color32(255, 255, 255, 255);
+        distanceText.distanceFromStartingPoint = 3;
+        distanceText.stepsToGo = 1;
     }
+
 }

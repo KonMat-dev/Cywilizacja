@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class IfItIsNewGround : MonoBehaviour, IEvaluateHex
 {
-    public static IfItIsNewGround Instance;
     public bool EvaluateHex(HexBattale evaluatedHex)
     {
-        return evaluatedHex.battaleState
+        bool x = evaluatedHex.battaleState
                     == HexState.active
                     && !evaluatedHex.isStrtingHex
-                    && !evaluatedHex.isIncluded
-                    && evaluatedHex.AvailableToGround();
+                    && !evaluatedHex.isIncluded;
+        bool y = evaluatedHex.battaleState
+                    == HexState.active;
+
+        return x;
     }
 }

@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: archer
   m_EditorClassIdentifier: 
   velocity: 0
-  initiative: 0
   hp: 100
   atack: 20
   resistance: 0
-  stack: 100
+  stack: 150
+  ownerID: 0
+  atackdistanse: 0
+  isRanger: 0
+  isFlying: 0
   heroSprite: {fileID: 21300000, guid: 06b319e8a0cd592419b88f543f5e80a0, type: 3}
   heroSO: {fileID: 6363436588726842252, guid: 199afea1586eb60489a1bfada8419a6b, type: 3}

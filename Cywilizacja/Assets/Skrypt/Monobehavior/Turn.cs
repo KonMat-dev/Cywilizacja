@@ -5,21 +5,25 @@ using UnityEngine;
 public class Turn : MonoBehaviour
 {
     BattaleControler battaleControler;
+    Hero currentAtacker;
 
     private void Start()
     {
         battaleControler = GetComponent<BattaleControler>();
     }
-    public void InitializeNewTurn()
+    public void InitializeNewTurn(Hero attacker)
     {
-        battaleControler.DefineNewAtacker();//finds an attacking hero
-        Hero currentAtacker = BattaleControler.currentAtacker;//gets local atacker (for parameters)
+        battaleControler.CleanField();
+        currentAtacker = attacker;
+        BattaleControler.currentAtacker = attacker;
         IAdjacentFinder adjFinder = currentAtacker.GetTypeOfHero();//determines the type of movement
         int stepsLimit = currentAtacker.heroData.CurrentVelocity;//gets current velocity of the atacker
 
         //determines possible positions
         currentAtacker.GetComponent<AviablePosition>().GetAvailablePositions(GetStartingHex(),
                                                      stepsLimit, adjFinder);
+
+        currentAtacker.DefineTargets();
     }
     public void RemoveNewTurn()
     {

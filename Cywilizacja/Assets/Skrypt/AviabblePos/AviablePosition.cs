@@ -10,7 +10,7 @@ public class AviablePosition : MonoBehaviour
     {
 
         AdjFinder.GetAdjacentHexesExtended(startingHex);
-        for (step = 2; step <= stepsLimit; step++)
+        for (step = 1; step <= 5; step++)
         {
             initialHexes = GetNewInitialHexes();
             foreach (HexBattale hex in initialHexes)

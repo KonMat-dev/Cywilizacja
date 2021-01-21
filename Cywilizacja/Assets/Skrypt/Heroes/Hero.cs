@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Hero : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public abstract class Hero : MonoBehaviour
     public CharAttributes heroData;
     public BattaleControler battaleControler;
     public bool alreadyMoved;
+    public Stack stack; // variable caching for a child object
+    public bool alreadyAttacked;
+    public bool alreadyMined;
 
     public abstract void DealsDamage(HexBattale target);
 
@@ -15,6 +19,18 @@ public abstract class Hero : MonoBehaviour
     {
         heroData.SetCurrentAttributes();//loads the current characteristics of the hero
         battaleControler = FindObjectOfType<BattaleControler>();
+        alreadyAttacked = false;
+        alreadyMined = false;
+    }
+
+    public void setAlreadyAttacked(bool i)
+    {
+        alreadyAttacked = i;
+    }
+
+    public void setAlreadyMined(bool i)
+    {
+        alreadyMined = i;
     }
 
     public void setAlreadyMoved(bool _alreadyMoved)
@@ -27,22 +43,38 @@ public abstract class Hero : MonoBehaviour
         return alreadyMoved;
     }
 
-    private void Start()
+    public virtual void refresh()
+    {
+
+    }
+
+    void Start()
     {
         alreadyMoved = false;
         STorageMNG.OnClickOnGrayIcon += DestroyMe; //subscribes the DestroyMe method to an OnRemoveHero event
+        stack = GetComponentInChildren<Stack>();
         if (heroData.ownerID == 0)
         {
-            GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
+            GetComponent<SpriteRenderer>().color = new Color(255, 0, 0, 255);
         }
     }
 
-    private void DestroyMe(CharAttributes SOHero)//destroys this object
+    public void DestroyMe(CharAttributes SOHero)//destroys this object
     {
         if (SOHero == heroData)// compares the player’s choice with the hero
         {
             HexBattale parentHex = GetComponentInParent<HexBattale>();
             parentHex.MakeMeDeploymentPosition();
+            Destroy(gameObject);
+        }
+    }
+
+    public void ClearMe(CharAttributes SOHero)//destroys this object
+    {
+        if (SOHero == heroData)// compares the player’s choice with the hero
+        {
+            HexBattale parentHex = GetComponentInParent<HexBattale>();
+            parentHex.potentialTarget = false;
             Destroy(gameObject);
         }
     }
@@ -62,5 +94,6 @@ public abstract class Hero : MonoBehaviour
     }
     public abstract IAdjacentFinder GetTypeOfHero();//determines the type of movement
 
-
+    public abstract void DefineTargets();
+    public virtual void HeroIsAtacking() { } // start an attack
 }

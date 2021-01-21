@@ -8,11 +8,7 @@ public class NeighboursFinder : MonoBehaviour
     static List<HexBattale> allNeighbours = new List<HexBattale>();
     private FieldMenager sceneManager;
 
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
     static public List<HexBattale> GetAdjacentHexes(HexBattale startingHex, IEvaluateHex chcekHex) {
 
         allNeighbours.Clear();

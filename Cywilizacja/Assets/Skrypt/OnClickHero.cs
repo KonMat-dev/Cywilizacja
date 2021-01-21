@@ -17,15 +17,14 @@ public class OnClickHero : MonoBehaviour
     void OnMouseDown()
     {
         BattaleControler battaleControler = hero.battaleControler;
-        Debug.Log(ID + " == " + PlayerController.Instance.IDOfAnActivePlayer);
         if (ID == PlayerController.Instance.IDOfAnActivePlayer) {
             if (alreadyMoved == false)
             {
-                battaleControler.GetComponent<Turn>().InitializeNewTurn();
+                battaleControler.GetComponent<Turn>().InitializeNewTurn(hero);
                 alreadyMoved = true;
             }
         }
-/*        if (alreadyMoved == true)
+/*      if (alreadyMoved == true)
         {
             battaleControler.GetComponent<Turn>().InitializeNewTurn();
             alreadyMoved = false;

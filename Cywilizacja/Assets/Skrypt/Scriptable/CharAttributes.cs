@@ -75,6 +75,12 @@ public class CharAttributes : ScriptableObject
             else { stackCurrent = 0; }
         }
     }
+
+    public void changeHP(int change)
+    {
+        hp += change;
+    }
+
     public int Atackdistanse
     {
         get//returns 1 for melee fighters, returns value of atackdistance for flying fighters

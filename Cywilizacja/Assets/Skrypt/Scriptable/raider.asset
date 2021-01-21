@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: raider
   m_EditorClassIdentifier: 
   velocity: 0
-  initiative: 0
   hp: 0
   atack: 0
   resistance: 0
-  stack: 3
+  stack: 350
+  ownerID: 0
+  atackdistanse: 0
+  isRanger: 0
+  isFlying: 0
   heroSprite: {fileID: 21300000, guid: 5e020bff273d2ee41b119d35dcfaf3d9, type: 3}
   heroSO: {fileID: 1650431671215671546, guid: 0e28c97540841b74ca33222d1b2174fb, type: 3}

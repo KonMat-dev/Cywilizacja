@@ -115,7 +115,10 @@ MonoBehaviour:
   velocity: 5
   heroData: {fileID: 0}
   battaleControler: {fileID: 0}
-  targetedForMovement: 0
+  alreadyMoved: 0
+  stack: {fileID: 0}
+  alreadyAttacked: 0
+  alreadyMined: 0
   _velocity: 0
   _hp: 0
   _atack: 0
@@ -124,7 +127,7 @@ MonoBehaviour:
   _heroSprite: {fileID: 0}
   _heroSO: {fileID: 0}
   _ownerID: 0
-  _targetedForMovement: 0
+  _alreadyMoved: 0
 --- !u!114 &4335149327920523974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMoving: 0
   path: []
+  canMove: 1
 --- !u!114 &-2437779714567955801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,6 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hero: {fileID: 0}
+  alreadyMoved: 0
 --- !u!65 &5440655180193378251
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -176,7 +181,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.34, y: 3.44, z: 0.19999999}
+  m_Size: {x: 2.4, y: 2.93, z: 0.19999999}
   m_Center: {x: 0, y: 1.72, z: 0}
 --- !u!1001 &792096573065003183
 PrefabInstance:
